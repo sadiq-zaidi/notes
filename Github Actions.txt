@@ -1,0 +1,15 @@
+									GITHUB ACTIONS
+									
+									.yml or .ymal files
+									
+									Automate workflow
+
+
+
+Workflow files can be created on github and it is stored in /.github/workflows/file.yml
+
+name								The name of your workflow. GitHub displays the names of your workflows on your repository's actions page.
+
+on								The name of the GitHub event that triggers the workflow
+
+
