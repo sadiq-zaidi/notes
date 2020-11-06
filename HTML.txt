@@ -18,7 +18,7 @@ usually this is the structure
 <!DOCTYPE html>							tells the browser in what language it is written in
 
 <head>										
-	<title>Page Title</title>				it has title, links to css files and javascript, metadata, keywords
+	<title>Page Title</title>				it has title, links to css files and javascript, metadata, keywords, page title is shown on the tab
 </head>
 <body>
 	<h1>This is a heading</h1>				Heading inside the body
@@ -35,8 +35,10 @@ F12								it shows us the developers tools
 
 <!--text-->							comments
 
-there are 6 heading levels in html
+there are 6 heading levels in html				h1 to h6, h1 being the biggest and h6 is the smallest <h1>heading 1</h1> ------ <h6>heading 1</h6>
 
+lorem								lorem ipsum is the language to fill as paragraph
+lorem100							write 100 words of lorem ipsum
 
 
 
