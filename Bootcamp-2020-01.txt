@@ -39,11 +39,11 @@ jobs:											This workflow contains a single job called "build"
     runs-on: ubuntu-latest								will run on github server with ubuntu latest version
 
     steps:										Steps represent a sequence of tasks that will be executed as part of the job
-      - uses: actions/checkout@v2							Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2							Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it. It gets our code from the repository otherwise the container has no access to github and our repository
 
-      - name: Install NodeJS								installing NodeJS using its command
-        uses: actions/setup-node@v2-beta						?
-        with:										parameters
+      - name: Install NodeJS								name of the execution
+        uses: actions/setup-node@v2-beta						install NodeJS with this predefined command
+        with:										actions are done using with
           node-version: 14								specifying version
       - name: Install Surge								name of the execution
         run: npm install -g surge							run to install Surge

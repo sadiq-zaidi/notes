@@ -1,0 +1,70 @@
+										HTML Notes
+
+
+Learning from youtube <https://www.youtube.com/watch?v=UB1O30fR-EE>
+
+
+html is NOT a programming language, it is a Markup language
+
+HTML tags are the basic building blocks of any webpage
+<tagname>content</tagname>					tags comes in pairs with content in between
+<h1></h1>							heading 1 tag
+<p></p>								paragraph tag
+<br>								self closing tag, they don't have any content in them
+
+usually this is the structure
+
+
+<!DOCTYPE html>							tells the browser in what language it is written in
+
+<head>										
+	<title>Page Title</title>				it has title, links to css files and javascript, metadata, keywords
+</head>
+<body>
+	<h1>This is a heading</h1>				Heading inside the body
+	<p>paragraph</p>					paragraph inside the body    	
+</body>
+</html>
+
+
+head + tab							it gives <head></head>
+
+ctrl + U							it shows html code of a website in the browser
+
+F12								it shows us the developers tools
+
+<!--text-->							comments
+
+there are 6 heading levels in html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
