@@ -1,0 +1,384 @@
+			PIAIC VIDEOS					EASY LINUX FOR BEGINNERS				BECOMING A POWER USER
+			     BY						           BY							BY
+			DANIAL NAGORI					       FELIX ALVARO					    CINDY QUACH
+
+
+
+
+
+			
+
+uptime							how long the computer is up
+
+uname							show os name
+	-s						show os name
+	-r						os release
+	-v						os version
+	-n						node name
+	-m						machine
+	-p						processor
+	-i						hardware platform
+	-o						os
+	-a, --all					show all
+
+w							who(user) is online
+
+man 'command name'					know about the options that can be used for a particular command
+
+ls							list contents of a directory
+	-l						long flag, show details about files
+	-a						show all hidden files
+	-ld						viewing a directory instead of a normal file
+ls -l <file_name>					for specific file
+ls -l /proc						files corresponds to directory of running processes
+ls -l /proc/<pid>					more details of a process
+
+
+cd							change directory
+	/						go to root directory
+	..						go one directory back
+	~						go to home dir
+
+mkdir							create directory, it can take multiple arguments/folder names	
+	-p						allow mkdir to create parent directories if they don't exist
+	-m						(mode) used to set permissions of directories during creation
+	-v						run command in verbose mode
+
+rmdir dir_name						remove directory
+	dir1, dir2,..					multiple directories can also be removed
+	-p						remove parent directories, if they're also empty
+	-r						remove recursively, for non-empty directory
+
+pwd							print working directory
+cat							list all contents of a text file
+
+mv file.ext ~/folder(s)	move file directory		using mv command to rename
+	file new name	to rename a file
+mv /home/user/source_file /home/user/moved_files/target_file
+
+rm							delete file(s)
+
+find path -name "file"					search for any file or directory
+	~/folder(s)					to search in a specific directory find ~/All_Data/ai/ -name 'Docker*'
+lscpu							information about the cpu
+cat /proc/cpuinfo					shows more detail about the cpu
+cat /etc/groups						group name:group password(encrypted):group id:users list
+sudo cat /etc/sudoers					root restricted fle, using sudo to open it
+cat /etc/passwd						view groups and users		
+
+df							disk free, disk space in all mounted devices
+	-h						human readable
+du							summarize disk usage of the set of files, disk usage of a specific directory
+	-h						human readable form
+	-s						total file size of the specified directory
+	path						size of a directory
+tab completion						start a letter and press tab will complete the command
+
+ctrl A							start of line
+ctrl E							end of line
+ctrl R							search for a command
+ctrl C							send signal to terminate running process like diskparted
+ctrl Z							suspends a program
+
+info							shows online information about a command
+whatis							short description of a specific keyword
+type							shows the location of a command file
+
+alias							assign a command alias, alias newfile="touch new file.txt"
+unalias	newfile						remove command alias
+
+ln							creates links to files and directories
+touch							to triger a file stamp update for a file, make a file
+	-c:						do not create file if it doesn't exist
+
+whereis							search for executable files
+which							search for files in the directories part of the PATH variable
+
+dd							copy lines of data, data copying to the drive must me unmounted
+sudo dd if=/dev/sdd of=~/Desktop/my_usb_image.img bs=100M
+							imaging drive
+diff							display the results of comparing two files
+more							show a text file one page at a time
+less							show a text file
+
+wc							display the count of the number of characters, words and lines in a file
+cut							get sections of text in a file
+
+grep <pattern> <file>					display results of finding expressions in a file
+	-r						search recursively
+	-w						match the whole word
+	-n						only in line number
+	-e						match pattern
+	--include and --exclude:			include and exclude files in the search
+	--include-dir and --exclude-dir:		include or exclude directories in the search
+grep -rw /home/user/Downloads -e "vacation"
+
+
+sed							perform editing commands, then copy to a standard output
+
+sort							arrange the lines in a file
+uniq							keep unique files in a file and delete duplicates
+compress						use to compress a file
+
+uncompress						decompress if compress was used
+gzip							compress files with GNU Zip
+gunzip							decompress file if compress with gzip
+
+tar							archive files with one or more directories
+sudo tar -xvf <nme>.tar					to extract from a tar file
+tar -cvf <package_name>.tar <address/file_name> <address/file_name> <address/file_name>
+							archiving these files in the current directory
+
+cal							show calender
+date							show/set date
+sudo date -s "year-month-day hr:min:sec"		change date and time
+bg							run program in background
+
+free							check free memory
+kill <pid>						stop a process by stopping all things properly with cleanup
+kill -KILL <pid>					last resort for killing, stop working whatever is running
+kill -PSTP						put program in a suspended condition, also this as ctrl Z
+SIGTERM
+SIGKILL
+SIGTSTP
+
+nice							run program with low priority
+
+ps							show current running processes
+	-x						show current running processes in detail
+		pid					process id
+		tty					terminal associated with the process
+		stat					process status
+		R					running
+		T					stopped
+		S					interruptible sleep(waiting for task to complete then it will resume)
+		time					total time taken by cpu
+		command					command we are running
+	-ef						e, all processes even run by other users; f, show in full
+		uid					user id, who runs the process
+		pid					process id
+		ppid					parent pid
+		c					number of children processes
+		stime					start time of the process
+		tty					terminal associated with the process
+		time					total cpu time consumed
+		cmd					command or name of command
+ps -ef | grep chrome					finding running processes and searching for specific process
+ps -aux | grep "process_name"				list all currently running processes, filter the processes, grep search for word not exact word
+sudo kill <process_id>					killing process using process id, grep running process even after killing
+
+top							list of cpu processes running
+	q						to quit
+reboot							reboot the system
+shutdown						turn off computer
+top							CPU and memory allocation
+
+chmod 777						change permission of the file using octal notation, if applying on directory then contents of directory are unaffected
+chmod rwxrw-r--						change permission
+sudo chmod u+x <file_name>/				changing permission for user(owner) to execute
+sudo chmod g-r <folder_name>/				removing read access from group
+sudo chmod a+rwx <file_name>				owner, group, and anyone else) to have all permissions. You can add read, write, and execute permissions to everyone at once using this command
+	u						user/owner
+	g						group
+	o						others
+	-						no permission	0
+	r						read		4
+	w						write		2
+	x						execute		1
+	s						symbolic	4; chmod 4755
+	t						symbolic bit	only root can delete others can add, e.g., tmp folder, octal number is 1(number)
+	b						block devices transfer data in blocks(unit of data transfer) (storage devices)
+	c 						character device transfer data character by character (keyboard, mouse)
+
+sudo chown <user> /file/destination			use to change ownership of file
+sudo chgrp <group> /file/destination			use to change group's permission
+
+pico							simplified version of emacs(without the features)
+nano /path/of/file					a clone of pico
+	Ctrl+O						To save modifications to the file
+	CTRL-X						Once editing is done, we can close and exit the program using Ctrl+X
+	CTRL-G						At any point in using the editor, you can get help using Ctrl+G, CTRL-X to exit
+
+
+vi							powerful editor used by administrators
+	i						insert mode
+	esc button					out of insert mode
+	shift+colon					end of page
+	w						write (means save)
+	q						quit
+
+script							save commands in a '.sh' format file which can be executed later whenever required
+	#!/bin/bash
+	echo $1						first argument print at its place
+	echo $2						second argument print at its place
+./script.sh						to execute this file and pass arguments if any
+
+cp file.ext ~/folder(s)					copy file from opened directory to another directory
+	cp /home/user/source_file /home/user/duplicates/target_file
+							Copy the file "source_file" in the directory /home/user/ to the directory "duplicates" as "target_file".
+
+apt-get install pkg					installs package
+apt-cache search keywrd					search our required package name
+apt-get upgrade						update softwares
+apt-get autoremove					autoremove files that are not required
+sudo apt remove <pkg>					to remove package
+
+sudo apt update						update packages
+sudo apt upgrade					upgrade the required dependencies
+sudo apt full-upgrade					update kernel
+sudo apt install -f					install the dependencies that are not installed after dpkg
+
+su -							super user or administrator mode activated
+sudo command						use administrative power and execute command
+sudo su							administrative mode
+	exit						exit sudo made
+hostname						prints hostname
+	-i						prints ip address
+
+sudo useradd <name> -m					creates a user, do this in home directory
+sudo passwd <name>					to add/change password
+sudo userdel <name> -r					to remove username
+sudo passwd -e <user>					-e is expire flag so password needs to reset
+passwd <user_name>					to change password of a user
+
+ssh -i ~/path/<file>.pem username@External Ip Addres	making remote connection to linux machine using pem file
+
+dpkg -s <package_name>					if package is installed or not
+sudo dpkg -i <package>.deb				installing using debian package, .deb format for debian package (will work if file is on machine 'package.deb')
+dpkg -l							list of installed debian packages
+dpkg -l | grep <app name>				to search for a package that is installed
+|							pipe command, takes output of a command and provide it to the command after it
+
+7z e <archive_name>.tar					extract archive from an archived file
+sd							these are the mass storage devices
+
+sudo parted -l						list of partitions
+sudo parted /dev/sdb					work on specific partition
+	print						details
+	mklabel gpt					make label using gpt partition table
+	mkpart primary ext4 1MiB 5GiB			making partition
+	quit						quit parted
+swap space is the virtual memory that is reserverd from the hard drive
+	mkpart primary linux-swap 5GiB 100%		make a swap space on our usb with remaining amount of storage left
+	print						show details of the selected drive
+	quit						quit parted
+sudo mkswap /dev/sdb2					make swap partition
+sudo swapon /dev/sdb2					to enable swap on the device
+sudo mkfs -t ext4 /dev/sdb1				format file system
+sudo mount /dev/sdb1 /my_usb/				mount usb in /dev/sdb1
+cd /my_usb/						start using my_usb
+sudo umount /dev/sdb1 or <my_usb>			to unmount the device
+
+cat /etc/fstab						list of unique ids, their mount points,what type of file system they are and some more information
+	UUID						Universally Unique ID of our USB
+	sudo blkid					block(storage devices) id prints the uuid of our devices
+
+in linux metadata and files organised in a structure that are called inode(similar to windows NTFS MFT records), they are stored in an inode table
+softlinks are similar to shortcuts in windows
+hardlinks are link to an inode in an inode table. They can be seen in ls -l (r--r--r-- 1) '1' refers to number of hardlinks it has. Hardlinks are helpful in retaining data without utilizing any more space
+
+ln -s <file_name> <file_name_softlink>			make a soft link of a file
+ln <file_name> <file_name_hardlink>			make a hard link of a file
+
+fsck							file system check, (IT MUST NOT BE MOUNTED, it will damage the file system), it mostly repairs the disk
+
+lsblk							block devices and file systems attached to your system
+	/						this shows if drive is mounted
+sudo fdisk -l						display partition information, -l option to list partitions in the block, device name can be passed
+sudo fdisk -l /dev/sdb					To list partitions contained in /dev/sdb, pass /dev/sdb to the fdisk command.
+fdisk							use without options, it provides a menu-driven environment for creating and deleting partitions
+							Caution! data may loss so backup first
+sudo fdisk /dev/[DRIVE]					Start fdisk by passing the disk you want to partition as the parameter
+	m						to show help
+	p						show details about partitions on the disk
+	d						delete partition
+	n						new partition
+		p					to make primary partition
+		e					extended or logical partition
+		partition number			default is 1, it is a good practice to give names orderly
+		provide the starting sector (memory location) of the new partition, from where you want to allocate
+		Provide the last sector of the new partition, up to where you want to allocate, difference between the sectors makes up the total size of the partition
+		the default partition type is set to Linux
+	t						to change the partition type
+	l						list of partition types
+	82						for Linux swap / Solaris
+	Up to this point, partition table is edited in the memory, q to exit without changes, d & n to update partitions
+	v						verifying changes before proceding
+	w						commit changes and exiting fdisk
+	q						to exit interactive mode when you are finished
+
+less /etc/some_file | grep Hello			
+init							this is the first process started by linux kernel with a pid of 1
+linux processes are dependent on parent processes
+
+lsof							lists open file and what processes are running
+
+ls /var/log						list files in /var/log, it contain logs of the machine, var is for variable
+less /var/log/syslog | grep error			finding error word in syslog
+sudo cat /var/log/syslog				open file containing syslogs, these are text files
+sudo du -a /home | sort -n -r | head -n 5		list all files recursively. The "-n" and "-r" flags tell sort to treat the string output on each line as a number (the file size), and to sort in reverse order, top print out only the top few results
+
+scp <path>/<file> user_name@ip_address:			copy file from one computer to another
+logrotate						how old logs are stored
+tail -f /var/log/syslog					show logs in realtime
+
+clonezilla						open source software for cloning
+Symentic Ghost						commercial software for cloning
+
+nslookup <web_address>					lookup ip addresses from the dns server
+service ntp status					checks for the status of ntp service
+sudo service ntp start					start a service
+sudo service ntp stop					stop a service
+sudo service ntp restart				restart a service
+
+sudo systemctl --state=running				seeing only the services that are running
+logger This is a test log entry				adding line in log file
+sudo tail -1 /var/log/syslog				last lines of log file in syslog
+
+sudo systemctl --state=failed				list services that have failed
+sudo service cups status				This is the service used to manage printers on Linux systems
+sudo ls -l /etc/cups					contents of cups directory
+
+
+Creating private and public keys.
+
+openssl genrsa -out private_key.pem 2048		It creates a 2048-bit RSA key, called "private_key.pem". "-out" flag is giving name, ends in 2048-bit
+openssl rsa -in private_key.pem -outform PEM -pubout -out public_key.pem
+							To create a public key based on a private key
+
+openssl rsautl -encrypt -pubin -inkey public_key.pem -in secret.txt -out secret.enc
+							to encrypt the file using your public key, this creates "secret.enc", which is an encrypted
+
+openssl rsautl -decrypt -inkey private_key.pem -in secret.enc
+							to decrpt a file
+
+openssl dgst -sha256 -sign private_key.pem -out secret.txt.sha256 secret.txt
+							This creates a file called "secret.txt.sha256" using your private key, which contains the hash digest of your secret text file.
+
+openssl dgst -sha256 -verify public_key.pem -signature secret.txt.sha256 secret.txt
+							This should show the following output, indicating that the verification was successful and the file hasn't been modified by a malicious third party
+							
+echo 'This is some text in a file' > file.txt		adding text and creating a new file
+
+md5sum file.txt > file.txt.md5				creating an md5sum file
+cat file.txt.md5					watching its content
+md5sum -c file.txt.md5					checking if two files are identical
+
+cp file.txt badfile.txt					copying file with different name
+md5sum badfile.txt > badfile.txt.md5			creating an md5 file
+cat badfile.txt.md5					checking its content
+cat file.txt.md5					checking its content or hash
+md5sum -c badfile.txt.md5				comparing hashes, it only checks contents of the file not the meta data of the file
+nano badfile.txt					open file for editing
+md5sum -c badfile.txt.md5				after editing checking if the hash matches, it did not due to editing of the file by a space
+md5sum badfile.txt > new.badfile.txt.md5		making md5 file with different name
+cat new.badfile.txt.md5					checking its content
+
+shasum file.txt > file.txt.sha1				hashing using sha1
+cat file.txt.sha1					checking its content
+shasum -c file.txt.sha1					checking using sha1
+
+shasum -a 256 file.txt > file.txt.sha256		hashing using sha256
+cat file.txt.sha256					checking contects of hash
+shasum -c file.txt.sha256				comparing hash 
+

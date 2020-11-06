@@ -1,0 +1,69 @@
+				PowerShell commands, Becoming a Power User
+					    by
+					Cindy Quach
+					
+
+
+
+
+ICACLS 'C:\Users\Qwiklab\Documents\important_document'	to view the existing permissions for the file/folder using this command
+ICACLS 'C:\Users\Qwiklab\Documents\important_document' /remove "Kara"
+							remove all permissions for Kara
+ICACLS 'C:\Users\Qwiklab\Documents\important_document' /grant "Kara:(r)"
+								 (w)
+							grant a user read/write permission
+Get-LocalUser						lists user accounts that are enabled or disabled
+Get-LocalGroup						lists local groups on the machine
+Get-LocalGroupMember Administrators			lists local administrators
+net user <user_name> "<password>"			change password of a group
+net user <user_name> *					password hidden
+net user <user_name> * /add				password hidden and new local user is created
+net user <user_name> /logonpasswordchg:yes		password will be changed by the user on the next logon
+net user <user_name> <password> /add /logonpasswordchg:yes	
+							password will be changed by the user while loging in and this password can be givien to the user
+net user <user_name> /del				deletes the user
+Remove-LocalUser <user_name>				to remove a local user
+ACLs							Access Control List
+DACLs							Discretionary Access Control List
+SACLs							Sysrem Access Control List
+ICACLs							Improved Change Access Control List
+ICACLs /?
+	F						full access
+	OI						object inherit
+	CI						container inherit
+	IO						inherit only
+Compress-Archive ~Path <source/path> <destination/path/file/name.zip>
+							compress file in folder
+
+$ErrorActionPreference= 'silentlycontinue'		to avoid seeing some errors, they are silient
+Unregister-PackageSource -Name chocolatey		unregister chocolatey if older version is installed
+Register-PackageSource -Name chocolatey -ProviderName Chocolatey -Location http://chocolatey.org/api/v2/
+							register chocolatey in powershell
+Install-Package -Name vlc -Source chocolatey		using it to install vlc
+Get-Package -Name vlc					check after installation that it is installed
+Choco Uninstall GIMP					uninstalling using chocolatey
+Get-Package						see if it is not in the list so it is uninstalled
+
+memory manager handles the virtual memory
+
+Get-Process						show list of tasks
+	NPM(K)						non page memory, K is kilobytes process is using
+Get-Process | Sort CPU -decending | Select -first 3 -Property ID,ProcessName,CPU
+							display top 3 processes using the CPU; all processes from os, cpu usage high to low, select first 3 outputs, show only 3 columns with information
+Get-Process -Name "exact_name"				find process by its exact name
+taskkill /F /PID <process_id>				killing task using pid
+Get-Process -Name "*process_name*"			stars at start and end means that process name may contain words before or after
+
+putty.exe -ssh <user_name>@<ip_address>			opening remote connection to another machine using ssh
+
+pscp.exe <path>/<file_name> user_name@ip_address:	copy file from one computer to another
+net share ShareMe=C:\path\ShareMe /grant:everyone,full	share folder with others
+
+Get-Service will show to list of running services
+Get-Service wuauserv					windows update service
+Get-Service wuauserv | Format-List *			what type of service it is and how it is configured to run
+Stop-Service wuauserv					to stop wuauserv service
+Start-Service wuauserv					to start wuauserv service
+
+putty.exe -ssh <user_name>@<ip_address>			connecting to remote computer via ssh protocol
+

@@ -1,0 +1,43 @@
+diskpart						disk management tool for windows
+	list disk					list disks connecting to the system
+	seleck disk <disk number>			select disk by its number
+	clean						format disk and removing partitions
+	create partition primary			partition created
+	select partition 1				usually partition 1 is the default partition
+	active						to activate the partition
+	format FS-NTFS label=<disk_name> quick		format the disk, provide file system name, disk name and format mode is quick
+
+MFT							master file table(storing data in the drive)
+mklink							make link(shortcut of file)
+mklink file_1_symlink file_1.txt			symbolic link is created for the file_1.txt
+notepad.exe file_1_symlink				opens notepad with the correct information inside the file_1.txt
+
+Hard link is created, an entry is added to MFT that links to the linked file record number not the name of the file so the name of the file may change and the link will still work. It is created with /H option
+mklink /H file_1_hardlink file_1.txt			making a hard link of a file
+
+disk cleanup						cleans disk
+disk defragmentation					it helps to relocate files so HDD arm moves less and read more
+trim							it is similar to defragmentation but used for SSDs
+
+fsutil repair query C:					check the self healing process of a drive
+chkdsk /F D:						/F to repair if any problem is found
+
+open diskpart from run
+list disk						lists disk
+sel disk 0						select the desired disk
+list partition						check if the correct is selected
+sel partition 1						select the EFI partition that you want to delete
+SET ID=ebd0a0a2-b9e5-4433-87c0-68b6b72699c7		this will make EFI partition deleteable
+list partition						list partitions
+sel partition 1						select the partition for deletioin
+delete partition override				deletes the selected partition
+
+smss.exe						sessions manager sub system is the first non-kernel user mode, sets up os to work
+winlogon.exe						login process
+csrss.exe						client/server runtime system starts after winlog.exe, it handles windows gui and cmd
+
+taskkill /pid 5856					terminate any task using process id
+tasklist						show list of tasks 
+
+eventvwr.msc						open event viewer from run
+

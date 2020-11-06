@@ -1,0 +1,55 @@
+									BOOTCAMP 2020 - Class 01
+
+																	November 05-06, 2020
+
+use of git and github
+
+installed visual studio
+	sudo dpkg -i ~/path/downloaded_file.deb
+
+installed node js
+	https://github.com/nodesource/distributions/blob/master/README.md
+			sudo apt install curl
+		curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+		sudo apt-get install -y nodejs
+
+installed npm
+	automatically installed while installing NodeJS
+
+installed surge
+	npm install --global surge
+
+surge email <>										set email
+surge password <>									set password
+
+surge ~/folder_path domain_name_to_set.surge.sh						upload website on surge
+website hosted on this webpage 								http://bootcamp_2020project0001.surge.sh/
+
+github secret file									use this file to store private things like keys or tokens
+
+
+						******* use of github actions *******
+name: Deploy Website after code is pushed						name of the execution
+on:											triger action on
+  push:											set action on push
+    branches: [ main ]									when push on the main branch
+
+jobs:											This workflow contains a single job called "build"
+  build:										The type of runner that the job will run on
+    runs-on: ubuntu-latest								will run on github server with ubuntu latest version
+
+    steps:										Steps represent a sequence of tasks that will be executed as part of the job
+      - uses: actions/checkout@v2							Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+
+      - name: Install NodeJS								installing NodeJS using its command
+        uses: actions/setup-node@v2-beta						?
+        with:										parameters
+          node-version: 14								specifying version
+      - name: Install Surge								name of the execution
+        run: npm install -g surge							run to install Surge
+      - name: Run Surge									name of the execution
+        run: surge ./ bootcamp_2020project0001.surge.sh --token ${{secrets.SURGE_TOKEN}}	./ folder location, domain name, token for verification, secret file with token
+
+
+Automate the workflow of updating website on surge domain
+

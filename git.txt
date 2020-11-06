@@ -1,0 +1,33 @@
+
+Book	:	Learn Verion Control with Git
+Author	:	Tobias Gunther
+
+Book	:	GIT Notes for professional
+Author	:	Goal Kicker
+
+Google Search for commands
+
+
+
+.gitignore folder				make a folder to exclude files	
+git --version					tells version of git
+pwd						print working directory
+cd ..						change directory moves up
+cd /folder/sub folder				change directory
+ls						lists directory
+ls -la						lists directory -a hidden
+git config --global user.name			check username if stored already
+git config --global user.email			check email if stored already
+git config --global user.name""			add user name for git	
+git config --global user.email ""		git config --global user.email
+
+git init					creates empty git repository
+git status					tells the status of the repository, untracked files, etc.
+git add <file name>				add files to repository
+git add .					to add complete folders and files
+git commit -m " "				save or snapshot the entire project
+	-m					save message otherwise git will open default editor to edit
+git push					push local changes to the remote repository
+git pull					pull remote changes to the local repository
+git clone <url>					clone git repository locally
+

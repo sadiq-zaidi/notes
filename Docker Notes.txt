@@ -1,0 +1,133 @@
+						Docker Deep Dive
+						   by
+						Amir Pinger
+				
+*most of the commands are running using sudo at the beginning
+
+docker --version				docker version
+docker version					shows detailed information of client and server, docker point of view. Both are in our system
+docker info					shows information about the details on system
+containerd is the bridge between docker daemon and runc, it is responsible for the lifecycle events of container
+runc is use for how to make a container
+shim makes daemonless containers
+images are standalone lightweight package, it has code, runtime, system tools, system libraries and settings. They are stack in layers
+dockerhub is a famous registry which saves images
+docker image ls					shows list of docker images on the system
+docker images					same as docker image ls
+docker ps/docker container ls			shows docker running containers
+	-a					display a list of containers running or stopped
+	-aq					display only id; a flag all, q flag quite(only id)
+
+
+docker volume ls				shows docker volume
+
+
+docker image rm alpine:latest			to remove image
+	-f					if force is required
+docker container rm [id]			removes only container of provided id
+docker container rm $(docker container ls -aq)	remove all stoped containers; 2 sudos will be used
+
+
+docker ps -a					details about containers running or stopped
+
+
+docker image pull ubuntu:latest			pull image from server to local machine
+docker image pull <username>/<repository>:<tag>	pulling image from dockerhub, usually latest name is used as tag. if image is not written in command it will work same
+
+
+docker container run -it ubuntu:latest /bin/bash	run docker container in interactive mode, writing container is not mandatory
+docker run hello-world				run docker image
+docker run -it <user>/<image>:<version> sh	run image in sh:shell
+	-it					to bring it in interactive mode
+	#					we are in container
+	ls					file system
+	exit					exit container and terminate container
+ctrl+PQ						comes out of the shell and container is running
+docker exec -it <image-id> or <name> sh		to go back to a container in interactive mode that is running 
+	exit					container still running in backgroud
+	
+
+ps(inside container)				running processes inside the container
+	-elf					running processes with detailed view
+
+
+docker container stop <name> or <id>		stop specific container
+docker container start <name> or <id>		to start a container
+
+
+docker system prune				remove all resources that are not associated with a container
+docker image prune				remove all images
+docker container prune				remove all containers
+docker volume prune				remove all volumes
+docker network prune				remove all networks
+
+
+docker container run -d <username>/<image>	run in detach/background, no need to write sh as it will run in bg. docker ps -a will tell in what mode it is running
+
+docker container run -d -p <port no.>:<internal port> <username>/<image>:<version>
+						to make this container accessible for others or for localhost. -p port is used. port no. means this port is listening. internal port is where an application run.
+						
+docker container run -d --name <name> -p <port no.>:<internal port> <username>/<image>:<version>
+						to give name of our choice to running container
+
+first code is written, then docker file, then docker image build command to make an image, then container
+
+docker file is a simple text file that describes application and things which help it for it to be up and running
+e.g of a simple html application 
+FROM nginx
+COPY . /usr/share/nginx/html			This is the folder where nginx asks us to copy things in it
+
+e.g. node.js
+FROM alpine
+LABEL maintainer="<name>"			helps to tag name/email of maker or any other information
+RUN apk add --update nodejs nodejs-npm		this will install the files in our containerized system
+COPY . /<location>				location of our files for container
+WORKDIR /<location>				we can define working directory
+RUN npm install					run required file
+ENV CREATEDBY="name"				environment variable can be used in container to be used by any part of application
+EXPOSE <port no.>				port location
+ENTRYPOINT["node","./app.js"]			commands to run application
+
+in after going in folders in git
+docker build -t first-docker-app .		this command will make image, period is necessary or the file will not run, it means all files
+
+docker push <username>/<image>:<tag>
+
+since username is not enterred in the image so to add we use
+
+docker tag <old name> <username>/<image>	another image is formed
+
+docker history <image>				it tells layers of image with file size details
+docker inspect <image>				detailed layers information
+
+to save files that were in container we can use bind mount, volume or tmpfs(linux only). It works by saving files in our machine or server directory. container consider it as its own directory but it is saving files outside container
+
+
+docker container run -it --name <name> -v /<for saving files in folder from root>:<inside container path from root> <username>/<image>:<tag> sh
+						running in interactive mode
+
+cd <inside container path>
+ls
+echo <text> > msg.txt
+ls
+cat msg.txt
+ctrl+PQ
+
+cd /<files in machine>
+ls
+cat msg.txt
+
+
+docker exec -it <name>
+cd <inside container path>
+ls
+echo <text> > msg2.txt
+ls
+cat msg2.txt
+quit
+
+cd /<files in machine>
+ls
+cat msg2.txt
+
+these files can also be used in other containers now
