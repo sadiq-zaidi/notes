@@ -34,6 +34,7 @@ ctrl + U						it shows html code of a website in the browser
 F12							it shows us the developers tools
 
 <!--text-->						comments
+ctrl + k + c						keyboard shortcut for comment
 
 there are 6 heading levels in html			h1 to h6, h1 being the biggest and h6 is the smallest <h1>heading 1</h1> ------ <h6>heading 1</h6>
 
@@ -61,7 +62,7 @@ href="http://www.google.com" target="_blank">		href is an attribute, it tells wh
 There are two types of lists ordered and unordered
 
 <ul>							unordered list tag
-	<li>bullet_points</li>				list items, default padding is also added
+	<li>bullet_points</li>				list items, default padding is added automatically
 </ul>
 
 <ol>							ordered list tag
@@ -88,9 +89,106 @@ action="process.php" method="POST">			submit the form in php file on server, it 
 							GET is ok for search bar or typing in the url
 </form>
 
+<br>							line break
+
+<div>							block level element so they put in the next line
+	<label>First Name</label>			label name which will be displayed as form name
+	<input type="text" name="FirstName"		input have different attributes, text is common, name is for server side programming(add in process.php)
+	placeholder="Enter your name">			grey out what is written and do not need to remove using backspace
+</div>
+
+<input type="email" name="Email">			email type validates if email is entered
+<textarea name="Message"></textarea>			textarea is used to add large amount of text like message box
+
+<label>Gender</label>					gender label of form
+<select name="gender">					selection for gender initialized
+	<option value="male">Male</option>		selectable option 'male', shown on page 'Male'
+	<option value="female">Female</option>		selectable option 'female', shown on page 'Female'
+</select>						select close
+
+<label>Birthday</label>					Birthday label
+<input type="date" name="Birthday"			callender can be opened for date selector
+
+<label>Age</label>					Age label
+<input type="number" name="Age"				input can be a number name is for server side programming
+value="30">						value 30 is shown and can be changed by button
+
+<input type="submit" name="submit" value="Submit">	it submits to process.php, name is for server side programming, value is actual text on the button
+
+
+<button click="SomeFunction">Click Me</button>		new button can also be made without form, follow function, click me written on the button
+
+
+<a href="sample.jpg" target="_blank">			setting link if click on image in new tab
+	<img src="sample.jpg" alt="My Sample Image" width="300">
+							image source is sample.jpg(same folder present), if image not found text shown, width 300, height is auto
+</a>
+
+<blockquote cite="google.com">				cite is where the quote comes from, it do not show site
+	Lorem50
+</blockquote>
+
+<p>The <abbr title="World Wide Web">WWW</abbr> is awesome</p>
+							wrap WWW in abbr tag which will show(title) abbreviation when cursor hover over it
+
+<p><cite>HTML crash course</cite> is great</p>		cite tag gives italic style
+
+<div style="margin-top: 500px;"></div>
 
 
 
+
+HTML 5 Semantic Tags
+<header></header>					usually the logo, social media link
+<footer></footer>					copyright, privacy policy
+<aside></aside>						sidebar content
+<main></main>
+<article></article>					for blog post
+<nav></nav>						nav bar
+<section></section>					copy text on homepage
+<details></details>
+
+
+<!DOCTYPE html>
+
+<head>
+    <title>My Blog</title>
+</head>
+
+<body>
+    <header>
+        <h1>My Website</h1>
+
+        <section>
+            <aritcle class="Post">
+                <h3>Blog Post 1</h3>
+                <small>Posted by Sadiq on november 5</small>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis molestiae perspiciatis et aut nam, pariatur iste quas dolorem voluptate hic aliquam nobis a ipsam. Dolores dolore, laborum sint omnis dolorum excepturi placeat eos earum cupiditate explicabo numquam ad in doloribus quidem ipsum harum deleniti fugiat a similique et praesentium velit.</p>
+                <a href="post.html">Read more</a>
+            </aritcle>
+
+            <aritcle class="Post">
+                <h3>Blog Post 2</h3>
+                <small>Posted by Sadiq on november 6</small>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis molestiae perspiciatis et aut nam, pariatur iste quas dolorem voluptate hic aliquam nobis a ipsam. Dolores dolore, laborum sint omnis dolorum excepturi placeat eos earum cupiditate explicabo numquam ad in doloribus quidem ipsum harum deleniti fugiat a similique et praesentium velit.</p>
+                <a href="post.html">Read more</a>
+            </aritcle>
+
+            <aritcle class="Post">
+               <h3>Blog Post 3</h3>
+                <small>Posted by Sadiq on november 7</small>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis molestiae perspiciatis et aut nam, pariatur iste quas dolorem voluptate hic aliquam nobis a ipsam. Dolores dolore, laborum sint omnis dolorum excepturi placeat eos earum cupiditate explicabo numquam ad in doloribus quidem ipsum harum deleniti fugiat a similique et praesentium velit.</p>
+                <a href="post.html">Read more</a>
+            </aritcle>
+                
+
+        </section>
+
+    </header>
+
+</body>
+
+</html>
 
 
 
