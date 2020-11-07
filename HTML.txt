@@ -7,49 +7,86 @@ Learning from youtube <https://www.youtube.com/watch?v=UB1O30fR-EE>
 html is NOT a programming language, it is a Markup language
 
 HTML tags are the basic building blocks of any webpage
-<tagname>content</tagname>					tags comes in pairs with content in between
-<h1></h1>							heading 1 tag
-<p></p>								paragraph tag
-<br>								self closing tag, they don't have any content in them
+<tagname>content</tagname>				tags comes in pairs with content in between
+<h1></h1>						heading 1 tag
+<p></p>							paragraph tag
+<br>							self closing tag, they don't have any content in them
 
 usually this is the structure
 
 
-<!DOCTYPE html>							tells the browser in what language it is written in
+<!DOCTYPE html>						tells the browser in what language it is written in
 
 <head>										
-	<title>Page Title</title>				it has title, links to css files and javascript, metadata, keywords, page title is shown on the tab
+	<title>Page Title</title>			it has title, links to css files and javascript, metadata, keywords, page title is shown on the tab
 </head>
 <body>
-	<h1>This is a heading</h1>				Heading inside the body
-	<p>paragraph</p>					paragraph inside the body    	
+	<h1>This is a heading</h1>			Heading inside the body
+	<p>paragraph</p>				paragraph inside the body    	
 </body>
 </html>
 
 
-head + tab							it gives <head></head>
+head + tab						it gives <head></head>
 
-ctrl + U							it shows html code of a website in the browser
+ctrl + U						it shows html code of a website in the browser
 
-F12								it shows us the developers tools
+F12							it shows us the developers tools
 
-<!--text-->							comments
+<!--text-->						comments
 
-there are 6 heading levels in html				h1 to h6, h1 being the biggest and h6 is the smallest <h1>heading 1</h1> ------ <h6>heading 1</h6>
+there are 6 heading levels in html			h1 to h6, h1 being the biggest and h6 is the smallest <h1>heading 1</h1> ------ <h6>heading 1</h6>
 
-lorem								lorem ipsum is the language to fill as paragraph
-lorem100							write 100 words of lorem ipsum
+lorem							lorem ipsum is the language to fill as paragraph
+lorem100						write 100 words of lorem ipsum
+
+<span>,<img>,<a>					inline elements, do not start a new line, take only necessary width
+<div>,<h1> - <h6>,<p>,<form>				block line elements, start on a full line, take full available width
+
+<strong>text</strong>					inline, text should be strong. By default it does bold
+
+<em>text</em>						inline, emphasize. By default it shows italic
+
+HTML Tags have attributes
+
+<tagname						All tags have attributes, provide information about the element
+attributename="attributevalue">content</tagname>		Placed within the start tag, Key/value pairs (id="some_id")
+<h1 title="My Company">About Us</h1>
+
+<a							Aey tag, url can be saved to be clicked, text is clickable link
+href="http://www.google.com" target="_blank">		href is an attribute, it tells where the location to open(local or url)
+</a>							target _blank opens link in new tab
+							
+
+There are two types of lists ordered and unordered
+
+<ul>							unordered list tag
+	<li>bullet_points</li>				list items, default padding is also added
+</ul>
+
+<ol>							ordered list tag
+	<li>bullet_points</li>				list items, default padding is also added, see in developer tools
+</ol>
 
 
+<table>							it displays table, it should only be used to add tabular data
+	<thead>						table headings
+		<tr>					table row
+			<th></th>			heading element
+		</tr>
+	</thead>
+	<tbody>						table body
+		<tr>					table row
+			<td></td>			table data
+		</tr>
+	</tbody>
+</table>
 
 
-
-
-
-
-
-
-
+<form							we can format a form but cannot add functionality of the form,
+action="process.php" method="POST">			submit the form in php file on server, it adds data to the database, secure then GET
+							GET is ok for search bar or typing in the url
+</form>
 
 
 
