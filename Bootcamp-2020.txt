@@ -17,4 +17,11 @@ Class 1:
 	learned to automate updates on surge
 
 Class 2:
+	npx
+	github actions
+	yarn
+	react
+	http://project_0003.surge.sh
+
+Class 3:
 	

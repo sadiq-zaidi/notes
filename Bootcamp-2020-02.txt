@@ -1,4 +1,4 @@
-									BOOTCAMP-2020-02
+									BOOTCAMP 2020 - Class 02
 
 									Starting React
 
@@ -14,3 +14,10 @@ Github Actions							search for github actions, then search yarn, then explore p
 yarn								it is a package manager like npm but is better in features
 
 deploy react based application on surge and automate using github actions
+
+edited src/App.js to add my name on the website
+
+We can use java script, html and css to create dynamic website so why we prefer React?
+	Before react all pages were static and every time server recieves a request and send a new static page, page went blank and comes back in a few moment. In late 1990's Microsoft introduced ajax for java script libraries. Request was sent in the background and only the requred data is received intead of full page.This increased the speed and data loading and was very effective. Problem was that code become cluttered and mixed, many tried to solve the problem but were unable to make it efficient. For applications like fb, they became very complicated. In 2013 fb introduced React that solves the problem of updating instead of reloading. Before that Angular was doing the work for us but had some problems.
+	Angular was two way binding, we update javascript or html the other gets updated by itself.
+	We can create a single page application using react. Instead of single page, it is distributed in small components. All components are different and work on different parts like groups, side bar, notifications etc. React helps us in making small components and then combine them to make a single page.

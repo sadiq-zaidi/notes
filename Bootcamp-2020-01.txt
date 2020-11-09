@@ -28,30 +28,3 @@ website hosted on this webpage 								http://bootcamp_2020project0001.surge.sh/
 github secret file									use this file to store private things like keys or tokens
 
 
-						******* use of github actions *******
-name: Deploy Website after code is pushed						name of the execution
-on:											triger action on
-  push:											set action on push
-    branches: [ main ]									when push on the main branch
-
-jobs:											This workflow contains a single job called "build"
-  build:										The type of runner that the job will run on
-    runs-on: ubuntu-latest								will run on github server with ubuntu latest version
-    steps:										Steps represent a sequence of tasks that will be executed as part of the job
-      - uses: actions/checkout@v2							Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-
-    steps:										Steps represent a sequence of tasks that will be executed as part of the job
-      - uses: actions/checkout@v2							Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it. It gets our code from the repository otherwise the container has no access to github and our repository
-
-      - name: Install NodeJS								name of the execution
-        uses: actions/setup-node@v2-beta						install NodeJS with this predefined command
-        with:										actions are done using with
-          node-version: 14								specifying version
-      - name: Install Surge								name of the execution
-        run: npm install -g surge							run to install Surge
-      - name: Run Surge									name of the execution
-        run: surge ./ bootcamp_2020project0001.surge.sh --token ${{secrets.SURGE_TOKEN}}	./ folder location, domain name, token for verification, secret file with token
-
-
-Automate the workflow of updating website on surge domain
-
