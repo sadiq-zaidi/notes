@@ -1,0 +1,8 @@
+									BOOTCAMP-2020-02
+
+									Starting React
+
+
+npx create-react-app project003					this command created a new folder which creates project003 folder with files of basic react files in it
+
+
