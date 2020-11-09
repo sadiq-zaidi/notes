@@ -5,4 +5,12 @@
 
 npx create-react-app project003					this command created a new folder which creates project003 folder with files of basic react files in it
 
+npm start							run this command from /project003 and it will show webpage in localhost:3000
 
+npm
+
+Github Actions							search for github actions, then search yarn, then explore page bottom Github Actions for Yarn
+
+yarn								it is a package manager like npm but is better in features
+
+deploy react based application on surge and automate using github actions

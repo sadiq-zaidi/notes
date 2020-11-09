@@ -31,3 +31,10 @@ git push					push local changes to the remote repository
 git pull					pull remote changes to the local repository
 git clone <url>					clone git repository locally
 
+git remote add origin <url_repository>		add git remote address
+
+git remote -v					verify that address has been added
+
+git push -u origin master			pushed the code on the github server, -u it will be linked with the remote repository automatically
+
+

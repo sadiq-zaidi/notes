@@ -8,8 +8,87 @@
 
 Workflow files can be created on github and it is stored in /.github/workflows/file.yml
 
+
+		.yml/.ymal file of bootcamp repository, address sadiq-zaidi/bootcamp/.github/workflows/deploy_surge.ymal
+This is a basic workflow to help you get started with Actions
+
+name: Deploy Website after code is pushed
+on:								Controls when the action will run. Triggers the workflow on push or pull request
+  push:								action will be done on push
+    branches: [ main ]						on main branch
+
+jobs:								A workflow run is made up of one or more jobs that can run sequentially or in parallel		
+  build:							This workflow contains a single job called "build"
+    runs-on: ubuntu-latest					The type of runner that the job will run on
+    steps:							Steps represent a sequence of tasks that will be executed as part of the job
+      - uses: actions/checkout@v2				Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it, repository cloned to the container
+
+- name: Install NodeJS						Naming the commands to be executed
+  uses: actions/setup-node@v2-beta				Runs a single command using the runners shell, installing
+  with:					
+    node-version: 14						install version 14(lts version lattest on as on 09/Nov/2020)
+      - name: Install Surge
+        run: npm install -g surge
+      - name: Run Surge
+        # folder where the code exists ./ 
+        run: surge ./ bootcamp_2020project0001.surge.sh --token ${{secrets.SURGE_TOKEN}}
+
+
+
+# This is a basic workflow to help you get started with Actions
+
+name: React App Deploy to surge
+on:								Controls when the action will run. Triggers the workflow on push or pull request
+  push:								action will be done on push
+    branches: [ main ]						on main branch
+
+jobs:								A workflow run is made up of one or more jobs that can run sequentially or in parallel		
+  build:							This workflow contains a single job called "build"
+    runs-on: ubuntu-latest					The type of runner that the job will run on
+
+    steps:							Steps represent a sequence of tasks that will be executed as part of the job
+
+      - uses: actions/checkout@v2				Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it, repository cloned to the
+        
+      - name: Install NodeJS					install NodeJS in the container
+        uses: actions/setup-node@v2-beta			hides extra command
+        with:
+          node-version: 14
+        
+      - name: Install yarn					naming yarn and installing yarn
+        uses: borales/actions-yarn@v2.0.0			'actions' hides all the curl command and we do not have to do anything
+        with:							input to the action
+          cmd: install # will run `yarn install` command		we require to give the command input
+
+      - name: Build React app
+        run: yarn build						build will package all the components, creats JS and HTML files and give build project
+        
+      - name: Install Surge
+        run: npm install surge --global				installing surge in the container
+        yarn add --global surge					it can also work
+        
+      - name: Deploy to Surge
+        run: surge ./build project_0003.surge.sh --token ${{secrets.SURGE_TOKEN}}
+        							./build is the folder that has the deployed code, url, secret token
+      # Runs a single command using the runners shell
+      - name: Run a one-line script				running simple command if installation is correct
+        run: echo Hello, world!
+
+      - name: Run a multi-line script				running simple command if installation is correct
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
+
+
 name								The name of your workflow. GitHub displays the names of your workflows on your repository's actions page.
 
 on								The name of the GitHub event that triggers the workflow
+
+
+
+yarn								package manager for NodeJS, but released after npm and has better features, more used today
+
+npm								package manager for NodeJS
 
 

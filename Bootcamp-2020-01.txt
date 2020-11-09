@@ -37,6 +37,8 @@ on:											triger action on
 jobs:											This workflow contains a single job called "build"
   build:										The type of runner that the job will run on
     runs-on: ubuntu-latest								will run on github server with ubuntu latest version
+    steps:										Steps represent a sequence of tasks that will be executed as part of the job
+      - uses: actions/checkout@v2							Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 
     steps:										Steps represent a sequence of tasks that will be executed as part of the job
       - uses: actions/checkout@v2							Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it. It gets our code from the repository otherwise the container has no access to github and our repository
