@@ -7,8 +7,6 @@ npx create-react-app project003					this command created a new folder which crea
 
 npm start							run this command from /project003 and it will show webpage in localhost:3000
 
-npm
-
 Github Actions							search for github actions, then search yarn, then explore page bottom Github Actions for Yarn
 
 yarn								it is a package manager like npm but is better in features

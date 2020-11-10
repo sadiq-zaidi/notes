@@ -23,6 +23,7 @@ surge email <>										set email
 surge password <>									set password
 
 surge ~/folder_path domain_name_to_set.surge.sh						upload website on surge
+
 website hosted on this webpage 								http://bootcamp_2020project0001.surge.sh/
 
 github secret file									use this file to store private things like keys or tokens

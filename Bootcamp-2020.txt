@@ -1,7 +1,7 @@
 										BOOTCAMP 2020
 
-																		November 05, 2020
-Class 1:
+
+Class 1:												November 05, 2020
 	installed visual studio
 	installed node js
 	installed npm
@@ -10,13 +10,13 @@ Class 1:
 	surge email <>
 	surge password is <>
 	website hosted on this webpage http://bootcamp_2020project0001.surge.sh/
-																		November 06, 2020
+													November 06, 2020
 	use of git and github
 	use of github actions .yml or .ymal file in workflow
 	use to add secrets on github, surge token so we do not have to provide our id and password everytime
 	learned to automate updates on surge
 
-Class 2:
+Class 2:												November 09, 2020
 	npx
 	github actions
 	yarn
@@ -25,3 +25,13 @@ Class 2:
 
 Class 3:
 	
+
+
+
+
+
+
+
+Things to study
+	Class 1
+	Class 2
