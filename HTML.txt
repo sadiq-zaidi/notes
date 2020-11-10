@@ -187,7 +187,7 @@ This is inside body
 </footer>
 
 
-Webpage to open must have name index.html for the website to load
+Webpage to open must have name index.html for the website to load on the server
 
 sadiq_html.surge.sh						website hosting address
 

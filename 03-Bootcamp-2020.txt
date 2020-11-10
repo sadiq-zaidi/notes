@@ -1,0 +1,137 @@
+									BOOTCAMP 2020 - Class 03
+
+									Starting React
+									Nov 10, 2020
+
+
+yarn start							this starts index.js, this command comes from package.json
+
+index.js							it has css classes
+
+removing unwanted components from index.js and making it simple
+
+sudo npm install -g yarn					install yarn on the local machine
+
+yarn start							starting app, equivalent to npm start
+
+in public index.html is present
+	<div id="root"></div>					this is to follow root in index.js
+
+this is in index.js
+	<div>Hello World from Zaidi Sadiq</div>,		only this line will show on the webpage
+	document.getElementById('root')				this is connected to upper command, display this on the root of html page, we have written in <div> above
+    
+	<span>Hello World from Zaidi Sadiq</span>,		this changes and css can be used for styling
+
+
+editted App.js and clearing everything
+
+App.js file code,
+import logo from './logo.svg';					simplly import the files in this to utilize
+import './App.css';
+
+function App() {						function is a name can be changed
+  return <div>Hello from App.js</div>				<div> is neither a string nor HTML, we can return many things but here this is a tag
+}
+
+export default App;						App becomes a react tag/component
+
+Index.js file
+	import App from './App';				This will import but first App.js must export
+	<App/>							removed <span> line and now display is from App.js
+	<div><App/></div>					Result will be the same, we can also add different tags
+whenever you create a new js file a new function and export it React will create a new tag/custom component
+
+App.js
+	in return						when returning we can only provide one element NO two div can be added, we can add another div in parent div it will work
+	
+This syntax is jsx i.e. java script XML
+
+Index.js is also in jsx format, behind the scenes react creates js object then create the react create element and creates the object.
+React has the ability to recognise custom and bulit-in components.
+
+Index.js file
+	React.createElement('div',null,"Hello World with createElement")
+								inside "" is the child of div
+
+when we provide react with small character it will recognise as buit-in component, capital letter will be identified as react tag
+
+  React.createElement('div',null,React.createElement('div',null,"Hello in span using createElement")),
+
+This is complicated so React uses synthetic sugar tag library in jsx we use html syntax and React changes it in behind the scenes
+
+// comment single line
+*/	*/ to comment multiple lines
+
+All the tags are written in jsx format
+
+<App/>,								React converts it in js and then export to the root in public/index.html
+
+in Index.js we can also add properties like in html but it will not work and has no use but can be called in App.js. in function App() we will add props function App(props). We can give any name but props is standard in React short for properties, we will then call it as props.name
+
+<App name="Sadiq Zaidi"/>,					Index.js
+function App(props) {						App.js
+  return <div>
+    Hello from App.js Updated
+      <div>Another Tree showing {props.name}</div>
+
+
+All the properties will be coming in this prop object, this is the first parameter of our function and the properties will be coming as an object in this parameter
+
+In React we provide {} brackets to pass an expression on which we can perform calculation (could be a float)
+
+< starts means we are writing in jsx, then { starts means we are writing js.
+
+<CustomButton							This is defined by the developer
+	green={true}						providing property named green with value true, {} means passed in js
+	width={64}						providing property named width, a number
+	options={{ awesome: "yes", disabled: "no" }}		providing property named options, it has two properties awesome and disabled
+	onClicks={doStuffFunc}					providing property named onClicks, it would be a function if () present, it is passing a function
+/>
+
+
+function App({name, age}) {					This is called destructuring, introduced in js. We are destructuring directly into name and age instead of props, then props.name and props.age. We are expecting that object is coming in and we are already destructuring
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

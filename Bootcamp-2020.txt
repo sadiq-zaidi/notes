@@ -23,8 +23,9 @@ Class 2:												November 09, 2020
 	react
 	http://project_0003.surge.sh
 
-Class 3:
-	
+Class 3:												November 10,2020
+	continuing react
+	installing yarn
 
 
 

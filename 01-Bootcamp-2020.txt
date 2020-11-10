@@ -1,6 +1,7 @@
 									BOOTCAMP 2020 - Class 01
 
-																	November 05-06, 2020
+									Setting up Things
+									November 05-06, 2020
 
 use of git and github
 
