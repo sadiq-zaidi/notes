@@ -92,6 +92,12 @@ In React we provide {} brackets to pass an expression on which we can perform ca
 
 function App({name, age}) {					This is called destructuring, introduced in js. We are destructuring directly into name and age instead of props, then props.name and props.age. We are expecting that object is coming in and we are already destructuring
 
+Hello.js is formed with similar code to App.js, now I need to use Hello.js in App.js
+
+./Hello								current folder with this path
+
+<br/>								break
+
 
 
 
