@@ -13,6 +13,7 @@ Github Actions							search for github actions, then search yarn, then explore p
 yarn								it is a package manager like npm but is better in features
 
 deploy react based application on surge and automate using github actions
+								project_0003.surge.sh
 
 edited src/App.js to add my name on the website
 

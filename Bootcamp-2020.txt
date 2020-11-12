@@ -26,6 +26,10 @@ Class 2:												November 09, 2020
 Class 3:												November 10,2020
 	continuing react
 	installing yarn
+	understanding js, html, jsx in React
+
+Class 4:
+	
 
 
 
@@ -34,5 +38,15 @@ Class 3:												November 10,2020
 
 
 Things to study
+	CSS
+	Java Script
+	React		https://daveceddia.com/react-getting-started-tutorial/
 	Class 1
 	Class 2
+	Class 3
+
+Things to review:
+	HTML
+	Class 1
+	Class 2
+	Class 3

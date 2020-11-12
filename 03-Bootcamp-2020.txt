@@ -4,6 +4,9 @@
 									Nov 10, 2020
 
 
+local repository						~/git/03-assignment
+remote repository						github.com/sadiq-zaidi/
+
 yarn start							this starts index.js, this command comes from package.json
 
 index.js							it has css classes
@@ -98,7 +101,15 @@ Hello.js is formed with similar code to App.js, now I need to use Hello.js in Ap
 
 <br/>								break
 
+updated App.js
 
+added Hello.js
+								we will use className(jsx) property instead of class(for js)
+updated Hello.css						updated file
+
+uploaded in github repository
+
+created Github Actions
 
 
 

@@ -37,4 +37,10 @@ git remote -v					verify that address has been added
 
 git push -u origin master			pushed the code on the github server, -u it will be linked with the remote repository automatically
 
+git reset --hard <old-commit-id>		to go to previous commit in history
+
+git push -f <remote-name> <branch-name>		to change this in remote repository as well
+
+
+
 
